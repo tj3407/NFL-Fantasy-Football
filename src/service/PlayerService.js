@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import {apiPathToGetPlayerSeasonGamelogs} from "../paths/api/apiPathToPlayers";
 
-class PlayerService extends Component {
+class PlayerService {
     constructor(props) {
-        super(props)
         this.state = {
             stats: []
         }
@@ -12,20 +11,20 @@ class PlayerService extends Component {
     getPlayerSeasonLogs({ playerName, season }) {
         const format = `player=${playerName}`;
         const url = `${apiPathToGetPlayerSeasonGamelogs({ season, format })}`;
-        fetch(url, {
+        return fetch(url, {
             method: "GET",
             headers: new Headers({
-                "Authorization": "Basic " + btoa("djxtremor" + ":" + "MYSPORTSFEEDS") 
-            })
+                "Authorization": "Basic " + btoa("djxtremor:tjdev456") 
+            }),
+            dataType: "json"
         })
           .then(res => res.json())
-          .then((result) => {
-            //   this.setState({ stats: result.gamelogs});
-              return result;
-          },
-          (error) => {
-            console.log(error);
-          })
+        //   .then((result) => {
+        //     console.log(result)
+        //   },
+        //   (error) => {
+        //     console.log(error);
+        //   })
     }
 }
 
