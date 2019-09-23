@@ -19,12 +19,13 @@ class IndexPage extends Component {
     return (
       <Layout>
         <SEO title="Home" />
-        <Router>
+        {/* <Router>
           <Switch>
             <Route exact path="/" component={Teams}/>
             <Route exact path="/teams/:team" component={TeamRoster} />
           </Switch>
-        </Router>
+        </Router> */}
+        <Teams />
       </Layout>
     )
   }
