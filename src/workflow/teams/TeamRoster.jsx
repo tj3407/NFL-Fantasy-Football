@@ -4,7 +4,7 @@ import TeamService from "../../service/TeamService";
 export default class TeamRoster extends Component {
     constructor(props) {
         super(props)
-        this.team = new TeamRoster();
+        this.team = new TeamService();
     }
 
     componentDidMount() {

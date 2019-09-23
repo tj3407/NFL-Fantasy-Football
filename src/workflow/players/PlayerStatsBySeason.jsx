@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import PlayerService from "../../service/PlayerService"
 
-export class PlayerStatsBySeason extends Component {
+export default class PlayerStatsBySeason extends Component {
   constructor(props) {
     super(props)
     this.player = new PlayerService()

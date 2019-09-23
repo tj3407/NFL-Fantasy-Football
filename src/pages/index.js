@@ -1,16 +1,33 @@
-import React from "react"
+import React, { Component } from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import { PlayerStatsBySeason } from "../workflow/players/PlayerStatsBySeason"
+import PlayerStatsBySeason from "../workflow/players/PlayerStatsBySeason"
+import TeamRoster from "../workflow/teams/TeamRoster"
+import Teams from "../workflow/teams/Teams"
+import { Switch } from 'react-router'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <PlayerStatsBySeason />
-  </Layout>
-)
+class IndexPage extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    return (
+      <Layout>
+        <SEO title="Home" />
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Teams} />
+            <Route exact path="/teams/:team" component={TeamRoster} />
+          </Switch>
+        </Router>
+      </Layout>
+    )
+  }
+}
 
 export default IndexPage
