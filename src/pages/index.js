@@ -21,7 +21,7 @@ class IndexPage extends Component {
         <SEO title="Home" />
         <Router>
           <Switch>
-            <Route exact path="/" component={Teams} />
+            <Route exact path="/" component={Teams}/>
             <Route exact path="/teams/:team" component={TeamRoster} />
           </Switch>
         </Router>

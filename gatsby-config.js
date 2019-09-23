@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/NFL-Fantasy-Football",
   siteMetadata: {
     title: `NFL Fantasy Football`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
